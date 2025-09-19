@@ -32,16 +32,28 @@ serve(async (req) => {
     }
 
     console.log(`Processing breed classification for animal ${animal_id} of type ${animal_type}`)
+    console.log(`Image URL: ${image_url}`)
     
     const startTime = Date.now()
 
-    // For now, we'll use a general image classification model
-    // In production, you would use a specialized cattle/buffalo breed model
-    const result = await hf.imageClassification({
-      data: await fetch(image_url).then(r => r.blob()),
-      model: 'microsoft/resnet-50'
-    })
+    // Validate image URL
+    if (!image_url || !image_url.startsWith('http')) {
+      throw new Error('Invalid image URL provided')
+    }
 
+    // Fetch and validate image
+    console.log('Fetching image from URL...')
+    const imageResponse = await fetch(image_url)
+    if (!imageResponse.ok) {
+      throw new Error(`Failed to fetch image: ${imageResponse.status} ${imageResponse.statusText}`)
+    }
+
+    const imageBlob = await imageResponse.blob()
+    console.log(`Image fetched successfully, size: ${imageBlob.size} bytes, type: ${imageBlob.type}`)
+
+    // Skip Hugging Face API call for now and use mock predictions
+    console.log('Using mock predictions instead of HF API')
+    
     const processingTime = Date.now() - startTime
 
     // Mock breed predictions based on animal type (replace with actual model results)
