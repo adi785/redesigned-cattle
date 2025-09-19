@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useAuth } from '@/contexts/AuthContext';
 import { useToast } from '@/hooks/use-toast';
-import { Cow, Shield } from 'lucide-react';
+import { CircleDot, Shield } from 'lucide-react';
 
 const Auth = () => {
   const [email, setEmail] = useState('');
@@ -81,7 +81,7 @@ const Auth = () => {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Cow className="h-12 w-12 text-primary" />
+            <CircleDot className="h-12 w-12 text-primary" />
             <Shield className="h-8 w-8 text-accent" />
           </div>
           <h1 className="text-3xl font-bold text-primary">LivestockAI</h1>

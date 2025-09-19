@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { supabase } from '@/integrations/supabase/client';
-import { Search, Globe, MapPin, Cow } from 'lucide-react';
+import { Search, Globe, MapPin, CircleDot } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 interface Breed {
@@ -89,7 +89,7 @@ const Breeds = () => {
   };
 
   const getAnimalIcon = (type: string) => {
-    return <Cow className="h-5 w-5" />;
+    return <CircleDot className="h-5 w-5" />;
   };
 
   const getCharacteristicsList = (characteristics: any) => {
@@ -173,7 +173,7 @@ const Breeds = () => {
       return (
         <Card>
           <CardContent className="p-8 text-center">
-            <Cow className="h-16 w-16 mx-auto mb-4 text-muted-foreground" />
+            <CircleDot className="h-16 w-16 mx-auto mb-4 text-muted-foreground" />
             <h3 className="text-lg font-medium mb-2">No breeds found</h3>
             <p className="text-muted-foreground">
               {searchTerm || animalTypeFilter !== 'all'

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useAuth } from '@/contexts/AuthContext';
-import { Heart, Shield, Camera, Database, TrendingUp, Users } from 'lucide-react';
+import { Heart, Shield, Camera, Database, TrendingUp, Users, CircleDot } from 'lucide-react';
 
 const Index = () => {
   const { user } = useAuth();
@@ -35,7 +35,7 @@ const Index = () => {
       <section className="px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <Cow className="h-16 w-16 text-primary" />
+            <CircleDot className="h-16 w-16 text-primary" />
             <Shield className="h-12 w-12 text-accent" />
           </div>
           

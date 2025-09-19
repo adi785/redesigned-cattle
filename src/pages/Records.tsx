@@ -9,7 +9,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useAuth } from '@/contexts/AuthContext';
 import { supabase } from '@/integrations/supabase/client';
-import { Search, Filter, Eye, Edit, Calendar, Cow } from 'lucide-react';
+import { Search, Filter, Eye, Edit, Calendar, CircleDot } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 interface AnimalRecord {
@@ -215,7 +215,7 @@ const Records = () => {
           <div className="col-span-full">
             <Card>
               <CardContent className="p-8 text-center">
-                <Cow className="h-16 w-16 mx-auto mb-4 text-muted-foreground" />
+                <CircleDot className="h-16 w-16 mx-auto mb-4 text-muted-foreground" />
                 <h3 className="text-lg font-medium mb-2">No records found</h3>
                 <p className="text-muted-foreground">
                   {searchTerm || statusFilter !== 'all' || animalTypeFilter !== 'all'
